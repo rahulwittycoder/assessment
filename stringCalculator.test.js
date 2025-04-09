@@ -33,8 +33,15 @@ describe("StringCalculator", () => {
   test("throws on negative numbers", () => {
     expect(() => calc.Add("1,-2")).toThrow("negatives not allowed: -2");
   });
-  
+
   test("shows all negatives in exception", () => {
     expect(() => calc.Add("1,-2,-3")).toThrow("negatives not allowed: -2, -3");
   });
+
+  test("tracks how many times Add was called", () => {
+    calc.Add("1");
+    calc.Add("1,2");
+    expect(calc.getCalledCount()).toBe(2);
+  });
+  
 });
