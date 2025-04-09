@@ -26,5 +26,8 @@ describe("StringCalculator", () => {
     expect(calc.Add("1\n2,3")).toBe(6);
   });
 
+  test("supports different delimiters", () => {
+    expect(calc.Add("//;\n1;2")).toBe(3);
+  });
 
 });
