@@ -33,5 +33,8 @@ describe("StringCalculator", () => {
   test("throws on negative numbers", () => {
     expect(() => calc.Add("1,-2")).toThrow("negatives not allowed: -2");
   });
-
+  
+  test("shows all negatives in exception", () => {
+    expect(() => calc.Add("1,-2,-3")).toThrow("negatives not allowed: -2, -3");
+  });
 });
