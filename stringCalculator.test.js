@@ -44,4 +44,8 @@ describe("StringCalculator", () => {
     expect(calc.getCalledCount()).toBe(2);
   });
   
+  test("ignores numbers bigger than 1000", () => {
+    expect(calc.Add("2,1001")).toBe(2);
+  });
+  
 });
