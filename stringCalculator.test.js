@@ -47,5 +47,9 @@ describe("StringCalculator", () => {
   test("ignores numbers bigger than 1000", () => {
     expect(calc.Add("2,1001")).toBe(2);
   });
+
+  test("supports delimiters of any length", () => {
+    expect(calc.Add("//[***]\n1***2***3")).toBe(6);
+  });
   
 });
